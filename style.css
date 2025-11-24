@@ -1,78 +1,105 @@
-/* 1. Основной стиль и flex-контейнер для футера */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
   color: #333;
-
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  /* растянуть тело на всю высоту экрана */
 }
 
-/* 2. Хедер */
 header {
   background-color: #4c63af;
   color: white;
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem;
 }
 
-header h1 {
-  margin: 0.2rem 0;
-}
-
-header p {
-  margin: 0;
-}
-
-/* 3. Основной контент */
 main {
   flex: 1;
-  /* main занимает всё оставшееся пространство */
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1rem;
 }
 
-/* 4. Галерея с полноэкранными скриншотами */
-.gallery {
+.slider {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
   width: 100%;
-  max-width: 100vw;
+  max-width: 90vw;
 }
 
-.screenshot {
+/* Блок с изображением */
+.screenshot-container {
   width: 100%;
   height: 80vh;
-  /* почти весь экран по высоте */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background: white;
   border: 1px solid #ddd;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 0.5rem;
-  box-sizing: border-box;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
 }
 
-.screenshot img {
-  max-width: 100%;
-  max-height: 100%;
+.screenshot-container img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  /* изображение масштабируется, чтобы полностью поместиться */
-  border-radius: 4px;
+  display: block;
+  border-radius: 12px;
 }
 
-/* 5. Футер прижат к низу */
+.screenshot-container img.fade-out {
+  opacity: 0;
+}
+
+/* Подпись под картинкой */
+#slide-caption {
+  margin: 1rem 0 0 0;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Кнопки в стиле Apple */
+.controls {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.controls button {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 9999px;
+  /* круглая pill */
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.controls button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
 footer {
   text-align: center;
   padding: 1rem;

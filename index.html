@@ -15,18 +15,14 @@
   </header>
 
   <main>
-    <section class="gallery">
-      <div class="screenshot">
-        <img src="images/main.png" alt="Главная страница">
-        <p>Главная страница</p>
+    <section class="slider">
+      <div class="screenshot-container">
+        <img id="slide-image" src="images/main.png" alt="Главная страница">
       </div>
-      <div class="screenshot">
-        <img src="images/screenshot2.png" alt="Список публикаций">
-        <p>Список публикаций</p>
-      </div>
-      <div class="screenshot">
-        <img src="images/screenshot3.png" alt="Добавление публикации">
-        <p>Добавление публикации</p>
+      <p id="slide-caption">Главная страница</p>
+      <div class="controls">
+        <button id="prev">← Назад</button>
+        <button id="next">Вперёд →</button>
       </div>
     </section>
   </main>
@@ -34,6 +30,8 @@
   <footer>
     <p>© 2025 Шамиль. Проект для портфолио.</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
